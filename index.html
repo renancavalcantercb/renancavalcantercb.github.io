@@ -1,159 +1,181 @@
-	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
-	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="Harrison Jansma">
-		<!-- Meta Description -->
-		<meta name="description" content="A personal website built and deployed by Harrison Jansma.">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="portfolio">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Renan Cavalcante</title>
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-			<!--
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.ico">
+	<!-- Author Meta -->
+	<meta name="author" content="Harrison Jansma">
+	<!-- Meta Description -->
+	<meta name="description" content="A personal website built and deployed by Harrison Jansma.">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="portfolio">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Renan Cavalcante</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">
-			<link rel="stylesheet" href="css/nice-select.css">
-			<link rel="stylesheet" href="css/animate.min.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">
-			<link rel="stylesheet" href="css/main.css">
-		</head>
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
 
-		<body>
-			<header id="header">
-	      <div class="container main-menu">
-	        <div class="row align-items-center justify-content-between d-flex">
-	          <div class id="logo">
-	            <a href="/"><h3>Renan Cavalcante </h3></a>
-	         </div>
-	          <nav id="nav-menu-container">
-	            <ul class="nav-menu">
-	              <li><a href="/">Home</a></li>
-	              <li><a href="about">About</a></li>
-	              <li><a href="CV_Renan.pdf" class="genric-btn primary-border circle" target="_blank">Resume</a></li>
-	              </ul>
+<body>
+	<header id="header">
+		<div class="container main-menu">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div class id="logo">
+					<a href="/">
+						<h3>Renan Cavalcante </h3>
+					</a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li><a href="/">Home</a></li>
+						<li><a data-translate="about_me" href="about">About</a></li>
+						<li data-translate="resume"></li>
+						<li>
+							<div class="primary-switch">									
+								<input type="checkbox" id="default-switch" onclick="change_lang()">
+								<label for="default-switch"></label>
+							</div>
+						</li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header><!-- #header -->
+	<!-- start banner Area -->
+	<section class="banner-area">
+		<div class="container">
+			<div class="row fullscreen align-items-center justify-content-between">
+				<div class="col-lg-6 col-md-6 col-xs-6 banner-left">
+					<h5 data-translate="i_am">I am</h5>
 
-	          </nav><!-- #nav-menu-container -->
-	        </div>
-	      </div>
-	    </header><!-- #header -->
-			<!-- start banner Area -->
-			<section class="banner-area">
-				<div class="container">
-					<div class="row fullscreen align-items-center justify-content-between">
-						<div class="col-lg-6 col-md-6 col-xs-6 banner-left">
-							<h5>I am</h5>
+					<h2 class="mt-10 mb-20">Renan Cavalcante</h2>
+					<p data-translate="mini_intro">
+						Data scientist, lover of technology and RPA
+					</p>
+					<a href="https://github.com/renancavalcantercb?tab=repositories"
+						class="primary-btn text-uppercase mb-20" target="_blank" data-translate="my_projects">My Projects</a>
+				</div>
+				<div class="col-lg-6 col-md-6 col-xs-6 banner-right align-self-center">
+					<img src="img/renan.jpg" style="width:auto;height:auto;max-width:100%;">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
 
-							<h2 class="mt-10 mb-20">Renan Cavalcante</h2>
-							<p>
-								Data scientist, lover of technology and RPA
-							</p>
-							<a href="https://github.com/renancavalcantercb?tab=repositories" class="primary-btn text-uppercase mb-20" target="_blank">My Projects</a>
-						</div>
-						<div class="col-lg-6 col-md-6 col-xs-6 banner-right align-self-center">
-							<img src="img/renan.jpg" style="width:auto;height:auto;max-width:100%;">
-						</div>
+	<!-- Start home-about Area -->
+	<section class="home-about-area section-gap">
+		<div class="container">
+			<div class="row align-items-center justify-content-between personal-details">
+				<h1 class="text-uppercase" data-translate="personal_details_title">Personal Details</h1>
+				<br>
+				<br>
+
+				<blockquote class="generic-blockquote">
+					<p class="fz-16" data-translate="first_personal_details">
+
+						I am a physics student. From an early age seeking to learn more every day. I taught astronomy
+						classes for a year to teenagers in my college. I worked for two years as a scientific researcher
+						in the field of Stellar Astrophysics.I love to play MMO games and create bots to automate game
+						tasks.
+					</p>
+					<p class="fz-16" data-translate="second_personal_details">
+						I am currently a Bussiness Inteligence Jr developer at Looqbox. I work creating dashboards using
+						Python, creating and executing queries on SQL (MySQL, Oracle and Big Query) and NoSQL (MongoDB)
+						databases.
+					</p>
+
+				</blockquote>
+				<a href="about" class="primary-btn text-uppercase" data-translate="about_me">About me</a>
+
+			</div>
+		</div>
+	</section>
+	<!-- End home-about Area -->
+
+	<div clss="container">
+		<hr>
+	</div>
+	<!-- Start services Area -->
+	<section class="services-area section-gap">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content  col-lg-7">
+					<div class="title text-center">
+						<h1 class="mb-10" data-translate="areas_of_interest_title">Areas of Interest</h1>
+						<p data-translate="areas_of_interest_subtitle"> Take a look at some of the things I love working on.
 					</div>
 				</div>
-			</section>
-			<!-- End banner Area -->
+			</div>
 
-			<!-- Start home-about Area -->
-			<section class="home-about-area section-gap">
-				<div class="container">
-					<div class="row align-items-center justify-content-between personal-details">
-							<h1 class="text-uppercase">Personal Details</h1>
-							<br>
-							<br>
-
-							<blockquote class="generic-blockquote">
-								<p class="fz-16">
-
-									I am a physics student. From an early age seeking to learn more every day. I taught astronomy classes for a year to teenagers in my college. I worked for two years as a scientific researcher in the field of Stellar Astrophysics.I love to play MMO games and create bots to automate game tasks.
-								</p>
-								<p class="fz-16">
-									I am currently a Bussiness Inteligence Jr developer at Looqbox. I work creating dashboards using Python, creating and executing queries on SQL (MySQL, Oracle and Big Query) and NoSQL (MongoDB) databases.
-								</p>
-
-							</blockquote>
-							<a href="about" class="primary-btn text-uppercase">About me</a>
-
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="single-services">
+						<span class="lnr lnr-chart-bars"></span>
+						<a>
+							<h4>Data Analytics</h4>
+						</a>
+						<p data-translate="data_analytics">	
+							I love create solution for business problems using concepts of statistics and data science.
+						</p>
 					</div>
 				</div>
-			</section>
-			<!-- End home-about Area -->
 
-<div clss="container">
-<hr>
-</div>
-			<!-- Start services Area -->
-			<section class="services-area section-gap">
-				<div class="container">
-		            <div class="row d-flex justify-content-center">
-		                <div class="menu-content  col-lg-7">
-		                    <div class="title text-center">
-		                        <h1 class="mb-10">Areas of Interest</h1>
-		                        <p> Take a look at some of the things I love working on.
-		                    </div>
-		                </div>
-		            </div>
-					
-					<div class="row">
-						<div class="col-lg-4 col-md-6">
-							<div class="single-services">
-								<span class="lnr lnr-chart-bars"></span>
-								<a><h4>Data Analytics</h4></a>
-								<p>
-									I love create solution for business problems using concepts of statistics and data science.
-								</p>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6">
-							<div class="single-services">
-								<span class="lnr lnr-pie-chart"></span>
-								<a><h4>Data Visualization</h4></a>
-								<p>
-									I really enjoy creating dashboards using Plotly and ApexCharts.
-								</p>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6">
-							<div class="single-services">
-								<span class="lnr lnr-laptop-phone"></span>
-								<a><h4>Collaboration</h4></a>
-								<p>
-									I enjoy working with my team to create winning strategies.
-								</p>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6">
-							<div class="single-services">
-								<span class="lnr lnr-cog"></span>
-								<a><h4>Back-end</h4></a>
-								<p>
-									I love to create back-end solutions using Python and NodeJS.
-								</p>
-							</div>
-						</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="single-services">
+						<span class="lnr lnr-pie-chart"></span>
+						<a>
+							<h4>Data Visualization</h4>
+						</a>
+						<p data-translate="data_visualization">
+							I really enjoy creating dashboards using Plotly and ApexCharts.
+						</p>
 					</div>
 				</div>
-			</section>
-			<!-- End services Area -->
+
+				<div class="col-lg-4 col-md-6">
+					<div class="single-services">
+						<span class="lnr lnr-laptop-phone"></span>
+						<a>
+							<h4 data-translate="collaboration_title">Collaboration</h4>
+						</a>
+						<p data-translate="collaboration_content">
+							I enjoy working with my team to create winning strategies.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="single-services">
+						<span class="lnr lnr-cog"></span>
+						<a>
+							<h4>Back-end</h4>
+						</a>
+						<p data-translate="back_end">
+							I love to create back-end solutions using Python and NodeJS.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End services Area -->
 
 
 
@@ -162,239 +184,427 @@
 
 	<section class="home-about-area section-gap">
 
-			<div class="text-center">
-					<div class="menu-content">
-							<div class="title text-center">
-									<h1 class="mb-10">Skills Expertisse</h1>
-									  1 - Basic <span style="display: inline-block; width: 2ch;">&#9;</span>
-										 2 - Novice <span style="display: inline-block; width: 2ch;">&#9;</span>
-										 3 - Intermediate<span style="display: inline-block; width: 2ch;">&#9;</span>
-										  <p>4 - Advanced<span style="display: inline-block; width: 2ch;">&#9;</span>
-											 5 - Expert<p/>
-							</div>
-					</div>
-			</div>
-
-
-<div class="container">
-		<div class="row skillbar-wraps">
-			<div class="col-lg-4 skill-left">
-				<h4 class="text-center pt-50"> Programming Language </h4>
-				<div class="single-skill">
-					<p>
-						Python -   3
-					</p>
-					<div class="skill" data-width="60"></div>
-				</div>
-
-				<div class="single-skill">
-					<p>
-						JavaScript - 2   
-					</p>
-					<div class="skill" data-width="40"></div>
-				</div>
-
-				<div class="single-skill">
-					<p>
-						R - 1
-					</p>
-					<div class="skill" data-width="20"></div>
+		<div class="text-center">
+			<div class="menu-content">
+				<div class="title text-center">
+					<h1 class="mb-10" data-translate="skills_expertise_title">Skills Expertise</h1>
+						<ul class="ordered-list">
+							<li data-translate="basic"></li>
+							<li data-translate="novice"></li>
+							<li data-translate="intermediate"></li>
+							<li data-translate="advanced"></li>
+							<li data-translate="expert"></li>
+						</ul>
 				</div>
 			</div>
-
-			<div class="col-lg-4 skill-right">
-				<h4 class="text-center pt-50">Data Science</h4>
-				<div class="single-skill">
-					<p>
-						Pandas - 3
-					</p>
-					<div class="skill" data-width="60"></div>
-				</div>
-				<div class="single-skill">
-					<p>
-						Numpy - 3
-					</p>
-					<div class="skill" data-width="60"></div>
-				</div>
-
-				<div class="single-skill">
-					<p>
-						SciPy - 1
-					</p>
-					<div class="skill" data-width="20"></div>
-				</div>
-
-			</div>
-
-			<div class="col-lg-4 skill-right">
-				<h4 class="text-center pt-50"> Data Visualization </h4>
-
-				<div class="single-skill">
-					<p>
-						Plotly - 3
-					</p>
-					<div class="skill" data-width="60"></div>
-				</div>
-
-				<div class="single-skill">
-					<p>
-						Matplotlib - 3
-					</p>
-					<div class="skill" data-width="60"></div>
-				</div>
-
-
-				<div class="single-skill">
-					<p>
-						ApexCharts.JS - 2
-					</p>
-					<div class="skill" data-width="40"></div>
-				</div>
-
-			</div>
-
 		</div>
-	</div>
+
+
+		<div class="container">
+			<div class="row skillbar-wraps">
+				<div class="col-lg-4 skill-left">
+					<h4 data-translate="programming_languages" class="text-center pt-50">Programming Language</h4>
+					<div class="single-skill">
+						<p>
+							Python - 3
+						</p>
+						<div class="skill" data-width="60"></div>
+					</div>
+
+					<div class="single-skill">
+						<p>
+							JavaScript - 2
+						</p>
+						<div class="skill" data-width="40"></div>
+					</div>
+
+					<div class="single-skill">
+						<p>
+							R - 1
+						</p>
+						<div class="skill" data-width="20"></div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 skill-right">
+					<h4 class="text-center pt-50">Data Science</h4>
+					<div class="single-skill">
+						<p>
+							Pandas - 3
+						</p>
+						<div class="skill" data-width="60"></div>
+					</div>
+					<div class="single-skill">
+						<p>
+							Numpy - 3
+						</p>
+						<div class="skill" data-width="60"></div>
+					</div>
+
+					<div class="single-skill">
+						<p>
+							SciPy - 1
+						</p>
+						<div class="skill" data-width="20"></div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 skill-right">
+					<h4 class="text-center pt-50"> Data Visualization </h4>
+
+					<div class="single-skill">
+						<p>
+							Plotly - 3
+						</p>
+						<div class="skill" data-width="60"></div>
+					</div>
+
+					<div class="single-skill">
+						<p>
+							Matplotlib - 3
+						</p>
+						<div class="skill" data-width="60"></div>
+					</div>
+
+
+					<div class="single-skill">
+						<p>
+							ApexCharts.JS - 2
+						</p>
+						<div class="skill" data-width="40"></div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
 
 	</section>
 
 
-<hr>
+	<hr>
 
 
 
 
-<!-- Start recent-blog Area -->
-<section class="recent-blog-area section-gap">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-8 pb-30 header-text">
-				<h1>My Latest Projects</h1>
-				<p>
-					Take a look at my recent work.
-				</p>
+	<!-- Start recent-blog Area -->
+	<section class="recent-blog-area section-gap">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8 pb-30 header-text">
+					<h1 data-translate="my_lastest_projects_title">My Latest Projects</h1>
+					<p data-translate="my_lastest_projects_content">
+						Take a look at my recent work.
+					</p>
+				</div>
 			</div>
-		</div>
-		<div class="row">
+			<div class="row">
 
-			<div class="single-recent-blog col-lg-4 col-md-4">
-				<div class="thumb">
+				<div class="single-recent-blog col-lg-4 col-md-4">
+					<div class="thumb">
+						<a href="https://github.com/renancavalcantercb/CryptoCurrency-API" target="_blank">
+							<img class="f-img img-fluid" src="img/bitcoin-logo-color-illustration-png.webp" alt=""
+								style="width:300px;height:294px;">
+						</a>
+					</div>
+					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+
+						<div data-translate="first_date" class="meta">
+							Jan 20, 2020
+						</div>
+					</div>
 					<a href="https://github.com/renancavalcantercb/CryptoCurrency-API" target="_blank">
-					<img class="f-img img-fluid" src="img/bitcoin-logo-color-illustration-png.webp" alt="" style="width:300px;height:294px;">
-				</a>
+						<h4 data-translate="first_lastest_project">A Crpyto Currency API</h4>
+					</a>
+					<p data-translate="first_lastest_project_content">
+						An API that allows you to get the current price of any cryptocurrency.
+					</p>
 				</div>
-				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
 
-					<div class="meta">
-						Jan 20, 2020
+				<div class="single-recent-blog col-lg-4 col-md-4">
+					<div class="thumb">
+						<a href="https://github.com/renancavalcantercb/termoPython" target="_blank">
+							<img class="f-img img-fluid" src="img/wordle.jpg" alt="" style="width:300px;height:294px;">
+						</a>
 					</div>
-				</div>
-				<a href="https://github.com/renancavalcantercb/CryptoCurrency-API" target="_blank">
-					<h4>A Crpyto Currency API</h4>
-				</a>
-				<p>
-					An API that allows you to get the current price of any cryptocurrency.
-				</p>
-			</div>
-
-			<div class="single-recent-blog col-lg-4 col-md-4">
-				<div class="thumb">
+					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+						<div data-translate="second_date" class="meta">
+							Dec 10, 2019
+						</div>
+					</div>
 					<a href="https://github.com/renancavalcantercb/termoPython" target="_blank">
-					<img class="f-img img-fluid" src="img/wordle.jpg" alt="" style="width:300px;height:294px;">
-				</a>
+						<h4 data-translate="second_lastest_project">Wordle in Python</h4>
+					</a>
+					<p data-translate="second_lastest_project_content">
+						An implementation of the Wordle algorithm in Python.
+					</p>
 				</div>
-				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-					<div class="meta">
-						Dec 10, 2019
-					</div>
-				</div>
-				<a href="https://github.com/renancavalcantercb/termoPython" target="_blank">
-					<h4>Wordle in Python</h4>
-				</a>
-				<p>
-					An implementation of the Wordle algorithm in Python.
-				</p>
-			</div>
 
-			<div class="single-recent-blog col-lg-4 col-md-4">
-				<div class="thumb">
+				<div class="single-recent-blog col-lg-4 col-md-4">
+					<div class="thumb">
+						<a href="https://github.com/renancavalcantercb/ResponsesTest" target="_blank">
+							<img class="f-img img-fluid" src="img/Selenium_Logo.png" alt=""
+								style="width:300px;height:294px;">
+						</a>
+					</div>
+					<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+
+						<div data-translate="third_date" class="meta">
+							Dec 2, 2019
+						</div>
+					</div>
 					<a href="https://github.com/renancavalcantercb/ResponsesTest" target="_blank">
-					<img class="f-img img-fluid" src="img/Selenium_Logo.png" alt="" style="width:300px;height:294px;">
-				</a>
+						<h4 data-translate="third_lastest_project">A response Test script with Selenium</h4>
+					</a>
+					<p data-translate="third_lastest_project_content">
+						A selenium script that tests a dashboards response from Looqbox.
+					</p>
 				</div>
-				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
-
-					<div class="meta">
-						Dec 2, 2019
-					</div>
-				</div>
-				<a href="https://github.com/renancavalcantercb/ResponsesTest" target="_blank">
-					<h4>A response Test script with Selenium</h4>
-				</a>
-				<p>
-					A selenium script that tests a dashboards response from Looqbox.
-				</p>
 			</div>
 		</div>
-	</div>
-</section>
-<!-- end recent-blog Area -->
+	</section>
+	<!-- end recent-blog Area -->
 
 
 
-<hr>
-			<!-- start footer Area -->
-			<footer class="footer-area section-gap">
-					<div class="container">
-							<div class="row">
-									<div class="col-lg-5 col-md-6 col-sm-6">
-											<div class="single-footer-widget">
-													<h4>About This Page</h4>
-													<p class="footer-text">
-															This website was coded in HTML, CSS, and Javascript based on CV from <a href="https://github.com/harrisonjansma/harrisonjansma.github.io" target="_blank"> Harrison Jansma</a>
-													</p>
-													<p class="footer-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-											</div>
-									</div>
-									<div class="col-lg-5 col-md-6 col-sm-6">
-									</div>
-									<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-											<div class="single-footer-widget">
-													<h4>Follow Me</h4>
-													<p>Let's be social. </p>
-													<div class="footer-social d-flex align-items-center">
-															<a href="https://www.linkedin.com/in/renan-cavalcante-barroso/"><i class="fa fa-linkedin"></i></a>
-															<a href="https://github.com/renancavalcantercb"><i class="fa fa-github"></i></a>
-															<a href="https://mail.proton.me/u/0/renancavalcantercb@protonmail.com"><i class="fa fa-envelope"></i></a>
-													</div>
-											</div>
-									</div>
-							</div>
+	<hr>
+	<!-- start footer Area -->
+	<footer class="footer-area section-gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h4 data-translate="about_this_page">About This Page</h4>
+						<p data-translate="first_about_this_page_content" class="footer-text">
+							This website was coded in HTML, CSS, and Javascript based on CV from <a
+								href="https://github.com/harrisonjansma/harrisonjansma.github.io" target="_blank">
+								Harrison Jansma</a>
+						</p>
+						<p data-translate="second_about_this_page_content" class="footer-text">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
+							template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+								href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
 					</div>
-			</footer>
-			<!-- End footer Area -->
+				</div>
+				<div class="col-lg-5 col-md-6 col-sm-6">
+				</div>
+				<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+					<div class="single-footer-widget">
+						<h4 data-translate="follow_me">Follow Me</h4>
+						<p data-translate="social_media">Let's be social. </p>
+						<div class="footer-social d-flex align-items-center">
+							<a href="https://www.linkedin.com/in/renan-cavalcante-barroso/"><i
+									class="fa fa-linkedin"></i></a>
+							<a href="https://github.com/renancavalcantercb"><i class="fa fa-github"></i></a>
+							<a href="https://mail.proton.me/u/0/renancavalcantercb@protonmail.com"><i
+									class="fa fa-envelope"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End footer Area -->
 
 
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-  			<script src="js/easing.min.js"></script>
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.min.js"></script>
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>
-    		<script src="js/jquery.tabs.min.js"></script>
-			<script src="js/jquery.nice-select.min.js"></script>
-            <script src="js/isotope.pkgd.min.js"></script>
-			<script src="js/waypoints.min.js"></script>
-			<script src="js/jquery.counterup.min.js"></script>
-			<script src="js/simple-skillbar.js"></script>
-			<script src="js/owl.carousel.min.js"></script>
-			<script src="js/mail-script.js"></script>
-			<script src="js/scroll.js"></script>
-			<script src="js/main.js"></script>
-		</body>
-	</html>
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="js/easing.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery.tabs.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/simple-skillbar.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<script src="js/scroll.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		var dictionary = {
+						'resume': {
+							'en': '<a href="CV_Renan_EN.pdf" class="genric-btn primary-border circle" target="_blank">Resume</a>',
+							'pt-br':'<a  href="CV_Renan_BR.pdf" class="genric-btn primary-border circle" target="_blank">Curriculo</a>'
+						},
+						'i_am': {
+							'en': 'I am',
+							'pt-br':'Eu sou'
+						},
+						'mini_intro':{
+							'en':'Data scientist, lover of technology and RPA',
+							'pt-br':'Cientista de dados, apaixonado por tecnologia e RPA'
+						},
+						'my_projects': {
+							'en': 'My Projects',
+							'pt-br':'Meus Projetos'
+						},
+						'personal_details_title': {
+							'en': 'Personal Details',
+							'pt-br':'Detalhes Pessoais'
+						},
+						'first_personal_details': {
+							'en': 'I am a physics student. From an early age seeking to learn more every day. I taught astronomy classes for a year to teenagers in my college. I worked for two years as a scientific researcher in the field of Stellar Astrophysics.I love to play MMO games and create bots to automate game tasks.',
+							'pt-br':'Sou estudante de física. Desde cedo buscando aprender mais a cada dia. Ensinei aulas de astronomia por um ano para adolescentes no meu colégio. Trabalhei por dois anos como pesquisador científico no campo da Astrofísica Estelar. Amo jogar jogos MMO e criar bots para automatizar tarefas do jogo.'
+						},
+						'second_personal_details': {
+							'en': 'I am currently a Bussiness Inteligence Jr developer at Looqbox. I work creating dashboards using Python, creating and executing queries on SQL (MySQL, Oracle and Big Query) and NoSQL (MongoDB) databases.',
+							'pt-br':'Atualmente sou desenvolvedor Jr de Inteligência de Negócios na Looqbox. Trabalho criando dashboards usando Python, criando e executando consultas em bancos de dados SQL (MySQL, Oracle e Big Query) e NoSQL (MongoDB).'
+						},
+						'about_me': {
+							'en': 'About Me',
+							'pt-br':'Sobre Mim'
+						},
+						'areas_of_interest_title': {
+							'en': 'Areas of Interest',
+							'pt-br':'Áreas de Interesse'
+						},
+						'areas_of_interest_subtitle': {
+							'en': 'Take a look at some of the things I love working on.',
+							'pt-br':'Dê uma olhada em algumas das coisas que amo trabalhar.'
+						},
+						'data_analytics':{	
+						'en':'I love create solution for business problems using concepts of statistics and data science.',
+						'pt-br':'Eu amo criar soluções para problemas de negócios usando conceitos de estatística e ciência de dados.'
+						},
+						'data_visualization':{
+							'en':'I really enjoy creating dashboards using Plotly and ApexCharts.',
+							'pt-br':'Adoro criar dashboards usando Plotly e ApexCharts.'
+						},
+						'collaboration_title': {
+							'en': 'Collaboration',
+							'pt-br':'Colaboração'
+						},
+						'collaboration_content': {
+							'en': 'I enjoy working with my team to create winning strategies.',
+							'pt-br':'Adoro trabalhar com minha equipe para criar estratégias vencedoras.'
+						},
+						'back_end': {
+							'en': 'I love to create back-end solutions using Python and NodeJS.',
+							'pt-br':'Adoro criar soluções back-end usando Python e NodeJS.'
+						},
+						'skills_expertise_title':{
+							'en':'Skills Expertise',
+							'pt-br':'Habilidades'
+						},
+						'basic':{
+							'en':'Basic',
+							'pt-br':'Básico'
+						},
+						'novice':{
+							'en':'Novice',
+							'pt-br':'Novato'
+						},
+						'intermediate':{
+							'en':'Intermediate',
+							'pt-br':'Intermediário'
+						},
+						'advanced':{
+							'en':'Advanced',
+							'pt-br':'Avançado'
+						},
+						'expert':{
+							'en':'Expert',
+							'pt-br':'Especialista'
+						},
+						'programming_languages': {
+							'en': 'Programming Languages',
+							'pt-br':'Linguagens de Programação'
+						},
+						'my_lastest_projects_title': {
+							'en': 'My Latest Projects',
+							'pt-br':'Meus Últimos Projetos'
+						},
+						'my_lastest_projects_content': {
+							'en': 'Take a look at my recent work.',
+							'pt-br':'Dê uma olhada em meu trabalho recente.'
+						},
+						'first_date': {
+							'en': 'Oct 06, 2022',
+							'pt-br':'06 de Outubro de 2022'
+						},
+						'first_lastest_project': {
+							'en': 'A Crpyto Currency API',
+							'pt-br':'Uma API de Criptomoedas'
+						},
+						'first_lastest_project_content': {
+							'en': 'An API that allows you to get the current price of any cryptocurrency.',
+							'pt-br':'Uma API que permite que você obtenha o preço atual de qualquer criptomoeda.'
+						},
+						'second_date': {
+							'en': 'Nov 22, 2022',
+							'pt-br':'22 de Novembro de 2022'
+						},
+						'second_lastest_project':{
+							'en':'Wordle in Python',
+							'pt-br':'Termo em Python'
+						},
+						'second_lastest_project_content':{
+							'en':'An implementation of the Wordle algorithm in Python.',
+							'pt-br':'Uma implementação do algoritmo do Termo em Python.'
+						},
+						'third_date':{
+							'en':'Oct 25, 2022',
+							'pt-br':'25 de Outubro de 2022'
+						},
+						'third_lastest_project':{
+							'en':'A response Test script with Selenium',
+							'pt-br':'Um script de teste de resposta com Selenium'
+						},
+						'third_lastest_project_content':{
+							'en':'A selenium script that tests a dashboards response from Looqbox.',
+							'pt-br':'Um script selenium que testa a resposta de um dashboard da Looqbox.'
+						},
+						'about_this_page':{
+							'en':'About This Page',
+							'pt-br':'Sobre Esta Página'
+						},
+						'first_about_this_page_content':{
+							'en':'This website was coded in HTML, CSS, and Javascript based on CV from <a href="https://github.com/harrisonjansma/harrisonjansma.github.io" target="_blank">Harrison Jansma</a>',
+							'pt-br':'Este site foi programado em HTML, CSS e Javascript com base no CV de <a href="https://github.com/harrisonjansma/harrisonjansma.github.io" target="_blank">Harrison Jansma</a>'
+						},
+						'second_about_this_page_content':{
+							'en':'Copyright &copy; 2020 All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Colorlib</a>',
+							'pt-br':'Copyright &copy; 2020 Todos os direitos reservados | Este modelo é feito com por <a href="https://colorlib.com" target="_blank">Colorlib</a>'
+						},
+						'follow_me':{
+							'en':'Follow Me',
+							'pt-br':'Siga-me'
+						},
+						'social_media':{
+							'en':'Let\'s be social. ',
+							'pt-br':'Vamos ser sociais.'
+						}
+				};
+				var langs = ['en', 'pt-br'];
+				var current_lang_index = 0;
+				var current_lang = langs[current_lang_index];
+
+				window.change_lang = function() {
+					current_lang_index = ++current_lang_index % 2;
+					current_lang = langs[current_lang_index];
+					translate();
+				}
+
+				function translate() {
+					$("[data-translate]").each(function(){
+						var key = $(this).data('translate');
+						$(this).html(dictionary[key][current_lang] || "N/A");
+					});
+				}
+
+				translate();
+	</script>
+</body>
+
+</html>
