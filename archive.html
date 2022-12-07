@@ -47,9 +47,8 @@
             <li><a data-translate="portfolio" href="archive">Portfolio</a></li>
             <li data-translate="resume"></li>
             <li>
-              <a href="#">
-                <p id="writeHere" class="writeHereMobile" onclick="change_lang()"></p>
-              </a>
+              <p id="writeHere" class="writeHereMobile" onclick="change_lang()" style='cursor: pointer;'>
+              </p>
             </li>
           </ul>
         </nav><!-- #nav-menu-container -->
@@ -303,16 +302,16 @@
       });
     }
 
-		function write_lang_in_html_with_p_tag() {
-			if (window.innerWidth < 768) {
-				$(".writeHereMobile").html("<img src='img/" + current_lang + ".png' alt='' width='50' height='50'>");
-			} else {
-				$("#writeHere").html("<img src='img/" + current_lang + ".png' alt='' width='30' height='30'>");
-			}
-		}
-		setInterval(write_lang_in_html_with_p_tag, 1000);
-		
-		translate();
+    function write_lang_in_html_with_p_tag() {
+      if (window.innerWidth < 768) {
+        $(".writeHereMobile").html("<img src='img/" + current_lang + ".png' alt='' width='50' height='50'>");
+      } else {
+        $("#writeHere").html("<img src='img/" + current_lang + ".png' alt='' width='30' height='30'>");
+      }
+    }
+    setInterval(write_lang_in_html_with_p_tag, 1000);
+
+    translate();
   </script>
 </body>
 
