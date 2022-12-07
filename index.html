@@ -48,13 +48,9 @@
 						<li><a data-translate="portfolio" href="archive">Portfolio</a></li>
 						<li data-translate="resume"></li>
 						<li>
-							<div class="row align-items-center">
-								<div class="primary-switch" style="margin-right: 10px; margin-bottom: 4px;">
-									<input onclick=change_lang() type="checkbox" id="primary-switch" />
-									<label for="primary-switch"></label>
-								</div>
-								<p id="writeHere"></p>
-							</div>
+							<a href="#">
+								<p id="writeHere" class="writeHereMobile" onclick="change_lang()"></p>
+							</a>
 						</li>
 					</ul>
 				</nav><!-- #nav-menu-container -->
@@ -615,8 +611,13 @@
 		}
 
 		function write_lang_in_html_with_p_tag() {
-			console.log($("#writeHere").html("<img src='img/" + current_lang + ".png' alt='' width='30' height='30'>"));
+			if (window.innerWidth < 768) {
+				$(".writeHereMobile").html("<img src='img/" + current_lang + ".png' alt='' width='50' height='50'>");
+			} else {
+				$("#writeHere").html("<img src='img/" + current_lang + ".png' alt='' width='30' height='30'>");
+			}
 		}
+		setInterval(write_lang_in_html_with_p_tag, 1000);
 
 		translate();
 	</script>
