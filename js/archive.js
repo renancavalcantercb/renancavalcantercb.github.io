@@ -11,6 +11,26 @@ var dictionary = {
         'en': 'Portfolio',
         'pt-br': 'Portfólio'
     },
+    'lastest_port_title': {
+        'en': 'Back-end Developer using Python and Flask for Astronomy group (SRGAC) at EFET (Brazil)',
+        'pt-br': 'Desenvolvedor Back-end usando Python e Flask para o Grupo de Astronomia (GEPAC) do IFCE '
+    },
+    'lastest_port_content': {
+        'en': 'I am currently working as a back-end developer for the Study and Research Group in Astronomy and Cosmology at EFET (Brazil). I am developing a web application using Python and Flask to help the group to manage their data from events and from blog posts. The application is hosted on Heroku and the code is available on GitHub.',
+        'pt-br': 'Atualmente estou trabalhando como desenvolvedor back-end para o Grupo de Estudos e Pesquisas em Astronomia e Cosmologia (GEPAC) do Instituto Federal do Ceará (IFCE). Estou desenvolvendo uma aplicação web usando Python e Flask para ajudar o grupo a gerenciar seus dados de eventos e de posts do blog. A aplicação está hospedada no Heroku e o código está disponível no GitHub.'
+    },
+    'lastest_port_date': {
+        'en': 'Renan Cavalcante on January 17, 2023',
+        'pt-br': 'Renan Cavalcante em 17 de Janeiro de 2023'
+    },
+    'frontend_port_title': {
+        'en': 'Front-end Developer using HTML, CSS, JavaScript and Bootstrap 5 for Astronomy group (SRGAC) at EFET (Brazil)',
+        'pt-br': 'Desenvolvedor Front-end usando HTML, CSS, JavaScript e Bootstrap 5 para o Grupo de Astronomia (GEPAC) do IFCE '
+    },
+    'frontend_port_content': {
+        'en': 'I am currently working as a front-end developer for the Study and Research Group in Astronomy and Cosmology at EFET (Brazil). I am developing a web application using HTML, CSS, JavaScript and Bootstrap 5',
+        'pt-br': 'Atualmente estou trabalhando como desenvolvedor front-end para o Grupo de Estudos e Pesquisas em Astronomia e Cosmologia (GEPAC) do Instituto Federal do Ceará (IFCE). Estou desenvolvendo uma aplicação web usando HTML, CSS, JavaScript e Bootstrap 5'
+    },
     'first_port_title': {
         'en': 'A response Test script with Selenium',
         'pt-br': 'Um script de teste de resposta com Selenium'
@@ -80,7 +100,7 @@ var dictionary = {
         'pt-br': 'Vamos ser sociais.'
     }
 };
-var langs = ['en', 'pt-br'];
+const langs = ['en', 'pt-br'];
 var current_lang_index = 0;
 var current_lang = langs[current_lang_index];
 
