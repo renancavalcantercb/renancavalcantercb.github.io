@@ -1,7 +1,7 @@
 var dictionary = {
     'resume': {
         'en': '<a href="CV_Renan_EN.pdf" class="genric-btn primary-border circle" target="_blank">Resume</a>',
-        'pt-br': '<a  href="CV_Renan_BR.pdf" class="genric-btn primary-border circle" target="_blank">Curriculo</a>'
+        'pt-br': '<a  href="CV_Renan_PT-BR.pdf" class="genric-btn primary-border circle" target="_blank">Curriculo</a>'
     },
     'i_am': {
         'en': 'I am',
