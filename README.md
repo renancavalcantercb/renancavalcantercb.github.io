@@ -29,6 +29,4 @@ You can explore the portfolio live at: [https://renancavalcantercb.github.io/](h
 - `stats`: Displays GitHub and Wakatime stats (requires image rendering).
 - `theme light`: Switches to light theme.
 - `theme dark`: Switches to dark theme.
-- `quote`: Displays a motivational quote.
-- `download resume`: Provides a link to download the resume.
 - `clear`: Clears the terminal.
