@@ -8,7 +8,7 @@ The interface simulates a real terminal where visitors can type commands to expl
 
 ## Features
 
-- **Interactive Commands**: Includes commands like `about`, `skills`, `projects`, `contact`, `stats`, `theme light` and `theme dark`, `quote`, and more.
+- **Interactive Commands**: Includes commands like `about`, `skills`, `projects`, `contact`, `stats`, `theme light` and `theme dark` and more.
 - **Light/Dark Theme**: Ability to switch between light and dark themes.
 - **Latest GitHub Projects**: Dynamically fetches the latest GitHub repositories using the GitHub API.
 - **Authentic Terminal Style**: Uses CSS to replicate the look and feel of a real terminal.
