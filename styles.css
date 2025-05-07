@@ -1,29 +1,56 @@
 body {
     background-color: #282a36;
     color: #f8f8f2;
-    font-family: monospace;
+    font-family: 'Fira Code', monospace;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
 #terminal {
-    width: 80%;
-    margin: auto;
-    padding: 1rem;
-    background-color: #1c1e26;
-    border-radius: 5px;
+    width: 90%;
     max-width: 800px;
+    margin: auto;
+    padding: 1.5rem;
+    background-color: #1c1e26;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .prompt {
     color: #8be9fd;
+    font-weight: bold;
 }
 
 #input {
     margin-left: 0.5rem;
+    caret-color: #8be9fd;
 }
 
 .input-line {
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.input-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 2px;
+    height: 1.2em;
+    background-color: #8be9fd;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .input-line input {
@@ -32,11 +59,25 @@ body {
     border: none;
     color: #f8f8f2;
     outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 0;
 }
 
 #output div {
     margin-bottom: 0.5rem;
     white-space: pre-line;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 body.light-mode {
@@ -46,14 +87,63 @@ body.light-mode {
 
 #terminal.light-mode {
     background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .input-line input.light-mode {
     color: #282a36;
-  }
+}
 
 .welcome-message {
     color: #8be9fd;
     white-space: pre-line;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    #terminal {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .welcome-message {
+        font-size: 1rem;
+    }
+}
+
+/* Links */
+a {
+    color: #ff79c6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #bd93f9;
+    text-decoration: underline;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1c1e26;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #44475a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6272a4;
 }
 

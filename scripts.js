@@ -1,12 +1,31 @@
 const input = document.getElementById("input");
 const output = document.getElementById("output");
+let commandHistory = [];
+let historyIndex = -1;
+const commands = ['help', 'ls', 'about', 'skills', 'projects', 'contact', 'socials', 'theme', 'clear', 'resume', 'blog', 'search'];
 
 function showWelcomeMessage() {
     const welcomeMessage = `
 Welcome to Renan's Portfolio Terminal!
 Type 'help' to see available commands.
 `;
-    output.innerHTML += `<div class="welcome-message">${welcomeMessage}</div>`;
+    typeWriter(welcomeMessage, 'welcome-message');
+}
+
+function typeWriter(text, className) {
+    let i = 0;
+    const div = document.createElement('div');
+    div.className = className;
+    output.appendChild(div);
+    
+    function type() {
+        if (i < text.length) {
+            div.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 30);
+        }
+    }
+    type();
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -17,21 +36,70 @@ document.addEventListener("DOMContentLoaded", function() {
 input.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         const command = input.value.trim();
+        if (command) {
+            commandHistory.push(command);
+            historyIndex = commandHistory.length;
+        }
         addOutput(command);
         executeCommand(command);
         input.value = "";
-  }
+    } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        if (historyIndex > 0) {
+            historyIndex--;
+            input.value = commandHistory[historyIndex];
+        }
+    } else if (event.key === "ArrowDown") {
+        event.preventDefault();
+        if (historyIndex < commandHistory.length - 1) {
+            historyIndex++;
+            input.value = commandHistory[historyIndex];
+        } else {
+            historyIndex = commandHistory.length;
+            input.value = "";
+        }
+    } else if (event.key === "Tab") {
+        event.preventDefault();
+        const currentInput = input.value.trim();
+        const matches = commands.filter(cmd => cmd.startsWith(currentInput));
+        
+        if (matches.length === 1) {
+            input.value = matches[0];
+        } else if (matches.length > 1) {
+            addOutput(`Possible commands: ${matches.join(', ')}`);
+        }
+    }
 });
 
 function addOutput(command) {
-    output.innerHTML += `<div><span class="prompt">user@portfolio:~$</span> <span>${command}</span></div>`;
+    const div = document.createElement('div');
+    div.innerHTML = `<span class="prompt">user@portfolio:~$</span> <span>${command}</span>`;
+    div.style.opacity = '0';
+    output.appendChild(div);
+    
+    // Animate entry
+    setTimeout(() => {
+        div.style.transition = 'opacity 0.3s ease-in';
+        div.style.opacity = '1';
+    }, 10);
 }
 
 function executeCommand(command) {
     let response;
     switch (command) {
         case "help":
-            response = "Commands available: ls, about, skills, projects, contact, socials, theme, clear";
+            response = `Available commands:
+- ls: List available sections
+- about: Information about me
+- skills: My technical skills
+- projects: My recent projects
+- contact: Contact information
+- socials: Links to my social media
+- theme [light/dark]: Toggle between light and dark themes
+- clear: Clear the terminal
+- resume: Link to my resume
+- blog: Link to my blog
+- search: Search in portfolio (coming soon)`;
             break;
         case "ls":
             response = "Sections: projects, skills, contact";
@@ -73,6 +141,11 @@ Social Links:
 - Personal Website: https://renancavalcantercb.github.io/
 `;
             break;
+        case "theme":
+            response = `Usage: theme [light/dark]
+Example: theme light - Switch to light theme
+         theme dark - Switch to dark theme`;
+            break;
         case "theme light":
             document.body.classList.add("light-mode");
             document.getElementById("terminal").classList.add("light-mode");
@@ -88,27 +161,85 @@ Social Links:
         case "clear":
             output.innerHTML = "";
             return;
+        case "resume":
+            response = `
+Download my resume:
+- PDF Version: [Download Resume](https://renancavalcantercb.github.io/resume.pdf)
+`;
+            break;
+        case "blog":
+            response = `
+Check out my latest blog posts:
+- [My Blog](https://renancavalcantercb.github.io/blog)
+`;
+            break;
+        case "search":
+            response = `
+Search functionality coming soon!
+`;
+            break;
         default:
             response = `Command '${command}' not found. Try 'help' for a list of commands.`;
     }
-    output.innerHTML += `<div>${response}</div>`;
+    
+    if (response) {
+        const div = document.createElement('div');
+        div.innerHTML = response;
+        div.style.opacity = '0';
+        output.appendChild(div);
+        
+        // Animate entry
+        setTimeout(() => {
+            div.style.transition = 'opacity 0.3s ease-in';
+            div.style.opacity = '1';
+        }, 10);
+    }
 }
 
 function fetchLatestProjects() {
     const githubUsername = "renancavalcantercb";
     const url = `https://api.github.com/users/${githubUsername}/repos?sort=created&per_page=5`;
+    
+    // Check cache
+    const cachedData = localStorage.getItem('github_projects');
+    const cacheTime = localStorage.getItem('github_projects_time');
+    const now = new Date().getTime();
+    
+    if (cachedData && cacheTime && (now - cacheTime < 3600000)) { // Cache valid for 1 hour
+        displayProjects(JSON.parse(cachedData));
+        return;
+    }
 
     fetch(url)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Request error');
+            }
+            return response.json();
+        })
         .then(data => {
-            let projectsList = "Latest Projects:\n";
-            data.forEach(repo => {
-                projectsList += `- ${repo.name}: ${repo.html_url}\n`;
-            });
-            output.innerHTML += `<div>${projectsList}</div>`;
+            // Save to cache
+            localStorage.setItem('github_projects', JSON.stringify(data));
+            localStorage.setItem('github_projects_time', now.toString());
+            displayProjects(data);
         })
         .catch(error => {
-            output.innerHTML += `<div>Error fetching projects. Please try again later.</div>`;
+            if (cachedData) {
+                // If there's an error but we have cache, use it even if expired
+                displayProjects(JSON.parse(cachedData));
+            } else {
+                addOutput('Error fetching projects. Please try again later.');
+            }
         });
 }
 
+function displayProjects(data) {
+    let projectsList = "Recent Projects:\n";
+    data.forEach(repo => {
+        projectsList += `- ${repo.name}: ${repo.html_url}\n`;
+        if (repo.description) {
+            projectsList += `  ${repo.description}\n`;
+        }
+    });
+    addOutput(projectsList);
+}
