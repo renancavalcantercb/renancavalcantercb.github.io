@@ -15,20 +15,21 @@ The interface simulates a real terminal where visitors can type commands to expl
   - Authentic terminal cursor and styling
 
 - **Theme Support**:
-  - Light and dark themes
+  - Light and dark themes with Dracula color scheme
   - Smooth theme transitions
   - Persistent theme preference
 
 - **Dynamic Content**:
   - Real-time GitHub projects fetching
-  - Cached API responses for better performance
+  - Cached API responses with 1-hour expiration
   - Detailed project information display
 
 - **Modern Development**:
-  - Responsive design
+  - PWA support with service worker for offline functionality
+  - Lazy loading with response caching
   - Accessibility features (ARIA labels, semantic HTML)
-  - SEO optimization
-  - Performance optimizations
+  - SEO optimization with Open Graph and Twitter meta tags
+  - Performance optimizations and loading indicators
 
 ## Live Demo
 
@@ -52,21 +53,51 @@ Explore the portfolio live at: [https://renancavalcantercb.github.io/](https://r
 ## Technical Details
 
 - **Frontend**:
-  - Vanilla JavaScript
-  - Modern CSS with animations
-  - Responsive design
-  - Fira Code font for better code readability
+  - Vanilla JavaScript (no build process required)
+  - Modern CSS with smooth animations and Dracula theme
+  - Responsive design with mobile breakpoints
+  - Fira Code font from Google Fonts for terminal aesthetic
 
 - **API Integration**:
-  - GitHub API for project fetching
-  - Local storage for caching
-  - Error handling and fallbacks
+  - GitHub API for dynamic project fetching
+  - Local storage caching with 1-hour expiration
+  - Graceful error handling and offline fallbacks
 
-- **Performance**:
-  - Optimized animations
-  - API response caching
-  - Lazy loading
-  - Minimal dependencies
+- **PWA Features**:
+  - Service worker for offline functionality
+  - App manifest for mobile installation
+  - Cached static assets and API responses
+
+- **Testing**:
+  - Automated test suite in `test.html`
+  - Manual testing through interactive terminal commands
+
+## Development
+
+### Local Setup
+
+Since this is a static site with no build process:
+
+1. Clone the repository
+2. Serve files using any HTTP server:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Or using Node.js
+   npx serve .
+   ```
+3. Open `http://localhost:8000` in your browser
+
+### Testing
+
+- **Automated Tests**: Open `test.html` in browser to run the test suite
+- **Manual Testing**: Use the terminal commands interactively in `index.html`
+
+### Deployment
+
+- Automatic deployment to GitHub Pages on push to main branch
+- No build process required - just static file hosting
 
 ## Contributing
 
