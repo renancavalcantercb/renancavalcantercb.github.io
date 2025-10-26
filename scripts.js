@@ -1,3 +1,12 @@
+// Configuration constants
+const CONFIG = {
+    TYPEWRITER_DELAY_MS: 30,
+    ANIMATION_DELAY_MS: 10,
+    ANIMATION_DURATION_MS: 300,
+    CACHE_DURATION_MS: 3600000, // 1 hour
+    DEBUG: false
+};
+
 const input = document.getElementById("input");
 const output = document.getElementById("output");
 let commandHistory = [];
@@ -360,29 +369,49 @@ function typeWriter(text, className) {
     const div = document.createElement('div');
     div.className = className;
     output.appendChild(div);
-    
+
     function type() {
         if (i < text.length) {
-            div.innerHTML += text.charAt(i);
+            div.textContent += text.charAt(i);
             i++;
-            setTimeout(type, 30);
+            setTimeout(type, CONFIG.TYPEWRITER_DELAY_MS);
         }
     }
     type();
 }
 
+// Helper function to safely create and animate elements
+function createAnimatedElement(content, useTextContent = true) {
+    const div = document.createElement('div');
+    if (useTextContent) {
+        div.textContent = content;
+    } else {
+        // Only use innerHTML when absolutely necessary and content is trusted
+        div.innerHTML = content;
+    }
+    div.style.opacity = '0';
+    output.appendChild(div);
+
+    setTimeout(() => {
+        div.style.transition = `opacity ${CONFIG.ANIMATION_DURATION_MS}ms ease-in`;
+        div.style.opacity = '1';
+    }, CONFIG.ANIMATION_DELAY_MS);
+
+    return div;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     showWelcomeMessage();
     input.focus();
-    
+
     // Register service worker for PWA
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('Service Worker registered successfully:', registration.scope);
+                if (CONFIG.DEBUG) console.log('Service Worker registered successfully:', registration.scope);
             })
             .catch(error => {
-                console.log('Service Worker registration failed:', error);
+                if (CONFIG.DEBUG) console.log('Service Worker registration failed:', error);
             });
     }
 });
@@ -428,29 +457,47 @@ input.addEventListener("keydown", function(event) {
 function addOutput(command) {
     const div = document.createElement('div');
     const currentPrompt = `user@portfolio:${currentPath}$`;
-    div.innerHTML = `<span class="prompt">${currentPrompt}</span> <span>${command}</span>`;
+
+    // Create prompt span
+    const promptSpan = document.createElement('span');
+    promptSpan.className = 'prompt';
+    promptSpan.textContent = currentPrompt;
+
+    // Create command span
+    const commandSpan = document.createElement('span');
+    commandSpan.textContent = ` ${command}`;
+
+    div.appendChild(promptSpan);
+    div.appendChild(commandSpan);
     div.style.opacity = '0';
     output.appendChild(div);
-    
+
     // Animate entry
     setTimeout(() => {
-        div.style.transition = 'opacity 0.3s ease-in';
+        div.style.transition = `opacity ${CONFIG.ANIMATION_DURATION_MS}ms ease-in`;
         div.style.opacity = '1';
-    }, 10);
+    }, CONFIG.ANIMATION_DELAY_MS);
 }
 
 function showLoadingIndicator() {
     const div = document.createElement('div');
     div.className = 'loading-indicator';
-    div.innerHTML = 'Loading<span class="dots">...</span>';
+
+    const loadingText = document.createTextNode('Loading');
+    const dotsSpan = document.createElement('span');
+    dotsSpan.className = 'dots';
+    dotsSpan.textContent = '...';
+
+    div.appendChild(loadingText);
+    div.appendChild(dotsSpan);
     div.style.opacity = '0';
     output.appendChild(div);
-    
+
     setTimeout(() => {
-        div.style.transition = 'opacity 0.3s ease-in';
+        div.style.transition = `opacity ${CONFIG.ANIMATION_DURATION_MS}ms ease-in`;
         div.style.opacity = '1';
-    }, 10);
-    
+    }, CONFIG.ANIMATION_DELAY_MS);
+
     return div;
 }
 
@@ -586,18 +633,10 @@ Search functionality coming soon!
             }
             response = `Command '${command}' not found. Try 'help' for a list of commands.`;
     }
-    
+
+
     if (response) {
-        const div = document.createElement('div');
-        div.innerHTML = response;
-        div.style.opacity = '0';
-        output.appendChild(div);
-        
-        // Animate entry
-        setTimeout(() => {
-            div.style.transition = 'opacity 0.3s ease-in';
-            div.style.opacity = '1';
-        }, 10);
+        createAnimatedElement(response, true);
     }
 }
 
@@ -609,8 +648,8 @@ function fetchLatestProjects() {
     const cachedData = localStorage.getItem('github_projects');
     const cacheTime = localStorage.getItem('github_projects_time');
     const now = new Date().getTime();
-    
-    if (cachedData && cacheTime && (now - cacheTime < 3600000)) { // Cache valid for 1 hour
+
+    if (cachedData && cacheTime && (now - cacheTime < CONFIG.CACHE_DURATION_MS)) {
         displayProjects(JSON.parse(cachedData));
         return;
     }
@@ -633,16 +672,7 @@ function fetchLatestProjects() {
                 // If there's an error but we have cache, use it even if expired
                 displayProjects(JSON.parse(cachedData));
             } else {
-                // Display error without prompt
-                const div = document.createElement('div');
-                div.innerHTML = 'Error fetching projects. Please try again later.';
-                div.style.opacity = '0';
-                output.appendChild(div);
-                
-                setTimeout(() => {
-                    div.style.transition = 'opacity 0.3s ease-in';
-                    div.style.opacity = '1';
-                }, 10);
+                createAnimatedElement('Error fetching projects. Please try again later.', true);
             }
         });
 }
@@ -655,16 +685,6 @@ function displayProjects(data) {
             projectsList += `  ${repo.description}\n`;
         }
     });
-    
-    // Display response without prompt
-    const div = document.createElement('div');
-    div.innerHTML = projectsList;
-    div.style.opacity = '0';
-    output.appendChild(div);
-    
-    // Animate entry
-    setTimeout(() => {
-        div.style.transition = 'opacity 0.3s ease-in';
-        div.style.opacity = '1';
-    }, 10);
+
+    createAnimatedElement(projectsList, true);
 }
